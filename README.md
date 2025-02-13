@@ -14,18 +14,6 @@ A sleek, interactive web app providing real-time weather updates and a 5-day for
 
 🔗 Built using HTML, CSS, JavaScript, and OpenWeather API.
 
-🛠 Installation
-
-Clone the repository:
-
-git clone https://github.com/yourusername/weather-app.git
-
-Navigate to the project folder:
-
-cd weather-app
-
-Open index.html in your browser or deploy it to a hosting service.
-
 🔧 Usage
 
 Enter a city name and click Search.
