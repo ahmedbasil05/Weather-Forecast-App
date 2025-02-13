@@ -1,0 +1,228 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: background 0.5s ease-in-out;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 500px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #222;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-box {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 75%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    background: #f1f1f1;
+    text-align: center;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    background: #e0e0e0;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff1e56, #ff5733);
+    transform: scale(1.1);
+}
+
+.location-btn, .unit-toggle {
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-btn::after, .unit-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.location-btn:hover::after, .unit-toggle:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.location-btn {
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    color: white;
+}
+
+.location-btn:hover {
+    background: linear-gradient(135deg, #1e90ff, #007aff);
+    transform: scale(1.08);
+}
+
+.unit-toggle {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+}
+
+.unit-toggle:hover {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    transform: scale(1.08);
+}
+
+#weather-result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #222;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.weather-icon {
+    width: 130px;
+    height: 130px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.weather-icon:hover {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* 5-Day Forecast Styling */
+#forecast {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.forecast-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 14px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-item:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.forecast-icon {
+    width: 70px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+    input {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: white;
+    }
+    .container {
+        background: #2b2b2b;
+        color: white;
+    }
+    input, button {
+        background: #444;
+        color: white;
+        border-color: #666;
+    }
+    button:hover {
+        background: #555;
+    }
+}
